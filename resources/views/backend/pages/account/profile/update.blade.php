@@ -22,22 +22,6 @@ $columnName = "image";
 
                     <div class="card">
                         <div class="card-body pt-3">
-                            <!-- Bordered Tabs -->
-                            <ul class="nav nav-tabs nav-tabs-bordered">
-
-                                <li class="nav-item">
-                                    <button class="nav-link active" data-bs-toggle="tab"
-                                            data-bs-target="#profile-overview">General
-                                    </button>
-                                </li>
-
-                                <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#update-skills">
-                                        Skills
-                                    </button>
-                                </li>
-
-                            </ul>
                             <form action="" method="post">
                                 @csrf
                                 <div class="row">
