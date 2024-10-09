@@ -1,1 +1,1 @@
-# Laravel 11 Ecommerce Project
+# Laravel Ecommerce Project
