@@ -29,15 +29,15 @@ class GlobalDataServiceProvider extends ServiceProvider
 //        $footerMenuData = Menu::where('is_footer', true)->orderBy('order')->get();
 //        $homeMenuData = Menu::where('is_home', true)->orderBy('order')->get();
 //        $settingData = Setting::first();
-//        $countryData = Country::all();
-//        $accountTypeData = AccountType::where('name', '!=', 'admin')->get();
+        $countryData = Country::all();
+        $accountTypeData = AccountType::where('name', '!=', 'admin')->get();
 //
 //        View::share('headerMenuData', $headerMenuData);
 //        View::share('footerMenuData', $footerMenuData);
 //        View::share('homeMenuData', $homeMenuData);
 //        View::share('settingData', $settingData);
-//        View::share('countryData', $countryData);
-//        View::share('accountTypeData', $accountTypeData);
+        View::share('countryData', $countryData);
+        View::share('accountTypeData', $accountTypeData);
 
     }
 }

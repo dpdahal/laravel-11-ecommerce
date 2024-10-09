@@ -8,9 +8,12 @@ $columnName = "image";
             <div class="card">
                 <div class="card-body p-3">
                     <div class="row">
-                        <div class="col-md-12 mt-3 mb-4">
+                        <div class="col-md-12 mt-2 mb-1">
                             <h2>
-                                <i class="bi bi-eye-fill"></i> Update Admin
+                                <i class="bi bi-pencil-square"></i> Update Account
+                                <a href="{{route('dashboard')}}" class="btn btn-primary btn-sm float-end">Back to home
+                                    <i class="bi bi-arrow-right-circle-fill"></i>
+                                </a>
                             </h2>
                             <hr>
                         </div>
@@ -107,14 +110,14 @@ $columnName = "image";
                                             </option>
                                         </select>
                                     </div>
-                                    <div class="form-group mb-2">
+                                    <div class="form-group mb-3">
                                         <label for="phone_number">Phone</label>
                                         <input name="phone_number" type="text" class="form-control"
                                                id="phone_number"
                                                value="{{$adminData->phone_number ?? ''}}">
 
                                     </div>
-                                    <div class="form-group mb-2">
+                                    <div class="form-group mb-3">
                                         <label for="birthday">Birthday</label>
                                         <input name="birthday" type="date" class="form-control"
                                                id="birthday"
@@ -122,13 +125,13 @@ $columnName = "image";
 
                                     </div>
 
-                                    <div class="form-group mb-2">
+                                    <div class="form-group mb-3">
                                         <label for="Email">Email</label>
                                         <input name="email" type="email" class="form-control" id="Email"
                                                value="{{$adminData->email}}">
                                     </div>
 
-                                    <div class="form-group mb-2">
+                                    <div class="form-group mt-2">
                                         <label for="description">About</label>
                                         <textarea name="description" class="form-control" id="description"
                                                   style="height: 100px">{!! $adminData->description?? '' !!}</textarea>
@@ -182,8 +185,9 @@ $columnName = "image";
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
-                                    <button class="btn btn-primary w-100">Update Profile</button>
+                                <div class="col-md-12 mt-3">
+                                    <button class="btn btn-primary w-100">
+                                        <i class="bi bi-pencil-square"></i> Update Profile</button>
 
                                 </div>
                             </div>

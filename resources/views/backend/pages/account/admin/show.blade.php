@@ -8,7 +8,7 @@ $columnName = "image";
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Admin Profile</h1>
+            <h1>Profile</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
@@ -24,25 +24,28 @@ $columnName = "image";
 
                     <div class="card">
                         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-                            @if($adminData->image)
-                                <img src="{{url($adminData->image)}}" alt="Profile" class="rounded-circle">
+                            @if($user->image)
+                                <img src="{{url($user->image)}}" alt="Profile" class="rounded-circle">
+                            @else
+                                <img src=" {{url('icons/user.png')}}" alt="Profile" class="rounded-circle">
+
                             @endif
                             x <h2>
-                                {{$adminData->name}}
+                                {{$user->name}}
                             </h2>
                             <h3>
-                                {{$adminData->email}}
+                                {{$user->email}}
                             </h3>
                             <div class="social-links mt-2">
-                                <a href="{{$adminData->facebook}}" target="_blank" class="facebook"><i
+                                <a href="{{$user->facebook}}" target="_blank" class="facebook"><i
                                         class="bi bi-facebook"></i></a>
-                                <a href="{{$adminData->twitter}}" target="_blank" class="twitter"><i
+                                <a href="{{$user->twitter}}" target="_blank" class="twitter"><i
                                         class="bi bi-twitter"></i></a>
-                                <a href="{{$adminData->instagram}}" target="_blank" class="instagram"><i
+                                <a href="{{$user->instagram}}" target="_blank" class="instagram"><i
                                         class="bi bi-instagram"></i></a>
-                                <a href="{{$adminData->linkedin}}" target="_blank" class="linkedin"><i
+                                <a href="{{$user->linkedin}}" target="_blank" class="linkedin"><i
                                         class="bi bi-linkedin"></i></a>
-                                <a href="{{$adminData->youtube}}" target="_blank" class="youtube"><i
+                                <a href="{{$user->youtube}}" target="_blank" class="youtube"><i
                                         class="bi bi-youtube"></i></a>
 
                             </div>
@@ -71,7 +74,7 @@ $columnName = "image";
                                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
                                     <h5 class="card-title">About</h5>
                                     <p class="small fst-italic">
-                                        {{$adminData->description}}
+                                        {!! $user->description  !!}
                                     </p>
 
                                     <h5 class="card-title">Profile Details</h5>
@@ -79,27 +82,34 @@ $columnName = "image";
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label ">Full Name</div>
                                         <div class="col-lg-9 col-md-8">
-                                            {{$adminData->name}}
+                                            {{$user->name}}
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Email</div>
                                         <div class="col-lg-9 col-md-8">
-                                            {{$adminData->email}}
+                                            {{$user->email}}
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Date of birth</div>
+                                        <div class="col-lg-9 col-md-8">
+                                            {{$user->birthday}}
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Account Position</div>
                                         <div class="col-lg-9 col-md-8">
+                                            {{$user->account_type->name}}
 
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Role</div>
                                         <div class="col-lg-9 col-md-8">
-                                            @foreach($adminData->allRoles as $role)
+                                            @foreach($user->role as $role)
                                                 {{$role->name}}
                                             @endforeach
                                         </div>
@@ -108,6 +118,7 @@ $columnName = "image";
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Country</div>
                                         <div class="col-lg-9 col-md-8">
+                                            {{$user->country->country_name}}
 
                                         </div>
                                     </div>
@@ -115,21 +126,21 @@ $columnName = "image";
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Address</div>
                                         <div class="col-lg-9 col-md-8">
-                                            {{$adminData->address}}
+                                            {{$user->address}}
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Phone</div>
                                         <div class="col-lg-9 col-md-8">
-                                            {{$adminData->phone}}
+                                            {{$user->phone_number}}
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Website</div>
                                         <div class="col-lg-9 col-md-8">
-                                            <a href="{{$adminData->website}}" target="_blank">{{$adminData->website}}</a>
+                                            <a href="{{$user->website}}" target="_blank">{{$user->website}}</a>
                                         </div>
                                     </div>
 

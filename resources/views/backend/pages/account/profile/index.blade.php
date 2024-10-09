@@ -92,6 +92,12 @@ $columnName = "image";
                                             {{$user->email}}
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Date of birth</div>
+                                        <div class="col-lg-9 col-md-8">
+                                            {{$user->birthday}}
+                                        </div>
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Account Position</div>
@@ -127,7 +133,7 @@ $columnName = "image";
                                     <div class="row">
                                         <div class="col-lg-3 col-md-4 label">Phone</div>
                                         <div class="col-lg-9 col-md-8">
-                                            {{$user->phone}}
+                                            {{$user->phone_number}}
                                         </div>
                                     </div>
 

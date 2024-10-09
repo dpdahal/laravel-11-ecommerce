@@ -1,6 +1,7 @@
-@extends('frontend.app')
+@extends('auth.auth-layout')
 
-@section('content')
+@section('auth-section')
+
     <div class="container-fluid custom-breadcrumb">
         <div class="container text-center py-3">
             <h1>Login</h1>

@@ -5,7 +5,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row mt-3 mb-4">
-                        <div class="col-md-13">
+                        <div class="col-md-12">
                             <h2>
                                 <i class="bi bi-lock-fill"></i> Update Password
                             </h2>
@@ -13,7 +13,7 @@
 
                             <hr>
                         </div>
-                        <div class="col-md-13">
+                        <div class="col-md-12">
                             <form action="{{route('change-password')}}" method="post">
                                 @csrf
                                 <div class="row">

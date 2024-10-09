@@ -47,11 +47,8 @@ class AdminController extends BackendController
     public function show(Request $request, string $id)
     {
         $this->checkAuthorization($request->user(), 'users_show');
-        $this->data('adminData', $this->aInterface->getById($id));
-        $this->data('roles', $this->aInterface->getAllRoles());
-        $this->data('countryData', $this->aInterface->getCountry());
-        $this->data('accountTypes', $this->aInterface->getAccountTypes());
-        return view($this->pagePath . 'account.admin.edit', $this->data);
+        $this->data('user', $this->aInterface->getById($id));
+        return view($this->pagePath . 'account.admin.show', $this->data);
 
     }
 

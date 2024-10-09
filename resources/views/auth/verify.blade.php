@@ -1,6 +1,5 @@
-@extends('frontend.app')
-
-@section('content')
+@extends('auth.auth-layout')
+@section('auth-section')
     <div class="container-fluid custom-breadcrumb">
         <div class="container text-center py-3">
             <h1>{{ __('Verify Your Email Address') }}</h1>
