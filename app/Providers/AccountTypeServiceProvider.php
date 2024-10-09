@@ -22,8 +22,8 @@ class AccountTypeServiceProvider extends ServiceProvider
     {
         $jobsRoles = [
             'admin',
-            'employer',
-            'job_seeker',
+            'vendor',
+            'customer',
         ];
 
         foreach ($jobsRoles as $type) {

@@ -28,17 +28,17 @@ class UserTableSeeder extends Seeder
             [
                 'country_id' => 1,
                 'account_type_id' => 2,
-                'name' => 'employer',
-                'email' => 'employer@gmail.com',
-                'password' => bcrypt('employer002'),
+                'name' => 'vendor',
+                'email' => 'vendor@gmail.com',
+                'password' => bcrypt('vendor002'),
                 'email_verified_at' => now(),
             ],
             [
                 'country_id' => 1,
                 'account_type_id' => 3,
-                'name' => 'jobseeker',
-                'email' => 'jobseeker@gmail.com',
-                'password' => bcrypt('jobseeker002'),
+                'name' => 'customer',
+                'email' => 'customer@gmail.com',
+                'password' => bcrypt('customer002'),
                 'email_verified_at' => now(),
             ],
 

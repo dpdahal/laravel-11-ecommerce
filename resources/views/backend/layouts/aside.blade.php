@@ -71,65 +71,6 @@
                     </ul>
                 </li>
             @endif
-            @if(auth()->user()->account_type->name=='admin' or auth()->user()->account_type->name=='employer')
-                <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#components-jobs" data-bs-toggle="collapse" href="#">
-                        <i class="bi bi-newspaper"></i><span>Jobs</span><i
-                            class="bi bi-chevron-down ms-auto"></i>
-                    </a>
-                    <ul id="components-jobs" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                        @can('job_categories_list')
-                            <li>
-                                <a href="{{route('manage-job-category.index')}}">
-                                    <i class="bi bi-circle"></i><span> Mange Job Category</span>
-                                </a>
-                            </li>
-                        @endcan
-                        @can('job_types_list')
-                            <li>
-                                <a href="{{route('manage-job-type')}}">
-                                    <i class="bi bi-circle"></i><span>Manage Job Type</span>
-                                </a>
-                            </li>
-                        @endcan
-                        @can('skills_list')
-                            <li>
-                                <a href="{{route('manage-skills')}}">
-                                    <i class="bi bi-circle"></i><span>Mange Skills</span>
-                                </a>
-                            </li>
-                        @endcan
-                        @can('job_levels_list')
-                            <li>
-                                <a href="{{route('manage-levels')}}">
-                                    <i class="bi bi-circle"></i><span>Mange Job Levels</span>
-                                </a>
-                            </li>
-                        @endcan
-                        @can('education_list')
-                            <li>
-                                <a href="{{route('manage-education')}}">
-                                    <i class="bi bi-circle"></i><span>Manage Education</span>
-                                </a>
-                            </li>
-                        @endcan
-                        @can('experiences_list')
-                            <li>
-                                <a href="{{route('manage-experience')}}">
-                                    <i class="bi bi-circle"></i><span>Manage Experience</span>
-                                </a>
-                            </li>
-                        @endcan
-
-                        <li>
-                            <a href="{{route('manage-job.index')}}">
-                                <i class="bi bi-circle"></i><span>Manage Job</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            @endif
-
 
             @if(auth()->user()->account_type->name=='admin')
                 <li class="nav-item">

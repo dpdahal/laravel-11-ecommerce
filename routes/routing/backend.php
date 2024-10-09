@@ -32,14 +32,6 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'company-backend', 'middlewa
     require_once dirname(__FILE__) . '/setting/setting.php';
     require_once dirname(__FILE__) . '/address/address.php';
 
-    require_once dirname(__FILE__) . '/job/job_category.php';
-    require_once dirname(__FILE__) . '/job/job-type.php';
-    require_once dirname(__FILE__) . '/job/job.php';
-    require_once dirname(__FILE__) . '/job/skills.php';
-    require_once dirname(__FILE__) . '/job/job-levels.php';
-    require_once dirname(__FILE__) . '/job/education.php';
-    require_once dirname(__FILE__) . '/job/experience.php';
-
     Route::post('ckeditor-image-upload', [CkeditorController::class, 'index'])->name('ckeditor-image-upload');
     Route::resource('manage-category', "\App\Http\Controllers\Backend\Blogs\BlogCategoryController");
     Route::group(['prefix' => 'manage-ajax'], function () {

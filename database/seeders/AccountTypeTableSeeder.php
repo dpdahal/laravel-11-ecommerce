@@ -15,8 +15,8 @@ class AccountTypeTableSeeder extends Seeder
     {
         $accountTypes = [
             ['name' => 'admin'],
-            ['name' => 'employer'],
-            ['name' => 'job_seeker'],
+            ['name' => 'vendor'],
+            ['name' => 'customer'],
         ];
 
         foreach ($accountTypes as $accountType) {

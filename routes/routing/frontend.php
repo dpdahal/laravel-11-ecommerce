@@ -16,18 +16,3 @@ Route::post('contact', '\App\Http\Controllers\Frontend\ContactController@store')
 
 
 Route::get('faq', '\App\Http\Controllers\Frontend\ApplicationController@faq')->name('faq');
-Route::any('upload-resume', '\App\Http\Controllers\Frontend\ApplicationController@upload_resume')->name('upload-resume');
-
-
-Route::group(['prefix' => 'jobs'], function () {
-    Route::get('/{slug?}', '\App\Http\Controllers\Frontend\ApplicationController@job')->name('jobs');
-    Route::any('apply/{slug?}', '\App\Http\Controllers\Frontend\ApplicationController@apply')->name('apply');
-});
-Route::group(['prefix' => 'banner'], function () {
-    Route::get('/{slug?}', '\App\Http\Controllers\Frontend\ApplicationController@banner')->name('banner');
-});
-
-$slugData = Menu::all();
-foreach ($slugData as $slug) {
-    Route::any($slug->slug . '/{criteria?}', '\App\Http\Controllers\Frontend\ApplicationController@allData')->name('slug');
-}

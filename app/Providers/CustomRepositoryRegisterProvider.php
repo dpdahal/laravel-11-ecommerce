@@ -20,20 +20,6 @@ use App\Repositories\Blogs\Category\BlogCategoryInterface;
 use App\Repositories\Blogs\Category\BlogCategoryRepository;
 use App\Repositories\Employer\EmployerInterface;
 use App\Repositories\Employer\EmployerRepository;
-use App\Repositories\Job\Education\EducationLevelInterface;
-use App\Repositories\Job\Education\EducationLevelRepository;
-use App\Repositories\Job\Experience\ExperienceInterface;
-use App\Repositories\Job\Experience\ExperienceRepository;
-use App\Repositories\Job\JobCategory\JobCategoryInterface;
-use App\Repositories\Job\JobCategory\JobCategoryRepository;
-use App\Repositories\Job\JobInterface;
-use App\Repositories\Job\JobRepository;
-use App\Repositories\Job\JobType\JobTypeInterface;
-use App\Repositories\Job\JobType\JobTypeRepository;
-use App\Repositories\Job\Levels\LevelsInterface;
-use App\Repositories\Job\Levels\LevelsRepository;
-use App\Repositories\Job\Skills\SkillsInterface;
-use App\Repositories\Job\Skills\SkillsRepository;
 use App\Repositories\MemberType\MemberTypeInterface;
 use App\Repositories\MemberType\MemberTypeRepository;
 use App\Repositories\Page\MenuInterface;
@@ -78,16 +64,6 @@ class CustomRepositoryRegisterProvider extends ServiceProvider
         $this->app->bind(SettingInterface::class, SettingRepository::class);
         $this->app->bind(ContinentInterface::class, ContinentRepository::class);
         $this->app->bind(CountryInterface::class, CountryRepository::class);
-        $this->app->bind(JobCategoryInterface::class, JobCategoryRepository::class);
-        $this->app->bind(JobInterface::class, JobRepository::class);
-        $this->app->bind(EmployerInterface::class, EmployerRepository::class);
-        $this->app->bind(JobTypeInterface::class, JobTypeRepository::class);
-        $this->app->bind(SkillsInterface::class, SkillsRepository::class);
-        $this->app->bind(LevelsInterface::class, LevelsRepository::class);
-        $this->app->bind(EducationLevelInterface::class, EducationLevelRepository::class);
-        $this->app->bind(ExperienceInterface::class, ExperienceRepository::class);
-
-
     }
 
     /**

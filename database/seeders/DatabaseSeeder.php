@@ -2,8 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Setting\Setting;
-use App\Models\User\User;
 use Illuminate\Database\Seeder;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -27,12 +25,7 @@ class DatabaseSeeder extends Seeder
             SettingTableSeeder::class,
             MemberTypeTableSeeder::class,
             TestimonialTableSeeder::class,
-            JobCategoryTableSeeder::class,
-            JobTypeTableSeeder::class,
-            SkillsTableSeeder::class,
-            JobLevelTableSeeder::class,
-            EducationLevelTableSeeder::class,
-            ExperienceTableSeeder::class,
+
         ]);
     }
 }

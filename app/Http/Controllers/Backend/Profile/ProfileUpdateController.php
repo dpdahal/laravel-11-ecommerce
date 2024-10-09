@@ -40,7 +40,6 @@ class ProfileUpdateController extends BackendController
         if ($request->isMethod('get')) {
             $this->data('adminData', $this->userRepo->get_profile());
             $this->data('countryData', $this->userRepo->getCountry());
-            $this->data('skillsData', $this->userRepo->getSkills());
             return view($this->pagePath . 'account.profile.update', $this->data);
         } else {
             $this->userRepo->update($request->all(), auth()->user()->id);
