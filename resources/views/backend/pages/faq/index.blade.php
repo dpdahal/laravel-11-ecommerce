@@ -21,7 +21,7 @@
                                             <select id="type" class="form-control" required>
                                                 <option value="">Select Type</option>
                                                 <option value="general">General</option>
-                                                <option value="employer">Employer</option>
+                                                <option value="employer">Store</option>
                                                 <option value="jobseeker">Job Seeker</option>
                                             </select>
                                         </div>

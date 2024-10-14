@@ -1,7 +1,3 @@
-<?php
-$columnName = "company_logo";
-?>
-
 @extends('backend.master.main')
 @section('content')
     <main id="main" class="main">
@@ -11,92 +7,87 @@ $columnName = "company_logo";
                     <div class="row">
                         <div class="col-md-12 mt-2">
                             <h2>
-                                <i class="bi bi-pencil-square"></i> Update Company
+                                <i class="bi bi-shop"></i> Add Store
 
-                                <a href="{{route('manage-employer.index')}}" class="btn btn-primary btn-sm float-end">
-                                    Show Company </a>
+                                <a href="{{route('manage-store.index')}}" class="btn btn-primary btn-sm float-end">
+                                    Show Store </a>
 
                             </h2>
-
                         </div>
                         <div class="col-md-12">
                             @include('backend.layouts.message')
                             <hr>
                         </div>
                         <div class="col-md-12">
-                            <form action="{{route('manage-employer.update',$employerData->id)}}" method="post"
+                            <form action="{{route('manage-store.store')}}" method="post"
                                   enctype="multipart/form-data">
                                 @csrf
-                                @method('PUT')
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group mb-2">
                                             <label for="title">Company Name:
                                                 <span class="text-danger"> {{$errors->first('company_name')}}</span>
                                             </label>
-                                            <input type="text" id="title" value="{{$employerData->company_name}}"
+                                            <input type="text" id="title" value="{{old('company_name')}}"
                                                    class="form-control"
                                                    name="company_name">
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="company_slug"> Slug:
+                                            <label for="slug"> Slug:
                                                 <span class="text-danger"> {{$errors->first('company_slug')}}</span>
                                             </label>
-                                            <input type="text" id="company_slug" value="{{$employerData->company_slug}}"
+                                            <input type="text" id="slug" value="{{old('company_slug')}}"
                                                    class="form-control"
                                                    name="company_slug">
                                         </div>
-                                        <div class="form-group mb-2">
-                                            <label for="company_email">Company Email:
-                                                <span class="text-danger"> {{$errors->first('company_email')}}</span>
-                                            </label>
-                                            <input type="text" id="company_email"
-                                                   value="{{$employerData->company_email}}"
-                                                   class="form-control"
-                                                   name="company_email">
-                                        </div>
-
                                         <div class="form-group mb-2">
                                             <label for="company_description">Description:
                                                 <a style="color: red;">{{$errors->first('company_description')}}</a>
                                             </label>
                                             <textarea name="company_description" placeholder="Description"
                                                       id="company_description"
-                                                      class="form-control">{{$employerData->company_description}}</textarea>
+                                                      class="form-control">{{old('company_description')}}</textarea>
                                         </div>
 
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group mb-2">
+                                            <label for="company_email">Company Email:
+                                                <span class="text-danger"> {{$errors->first('company_email')}}</span>
+                                            </label>
+                                            <input type="text" id="company_email" value="{{old('company_email')}}"
+                                                   class="form-control"
+                                                   name="company_email">
+                                        </div>
+                                        <div class="form-group mb-2">
                                             <label for="company_phone">Company Phone:
                                                 <span class="text-danger"> {{$errors->first('company_phone')}}</span>
                                             </label>
-                                            <input type="text" id="company_phone"
-                                                   value="{{$employerData->company_phone}}"
+                                            <input type="text" id="company_phone" value="{{old('company_phone')}}"
                                                    class="form-control"
                                                    name="company_phone">
                                         </div>
-
                                         <div class="form-group mb-2">
                                             <label for="company_address">Company Address:
                                                 <span class="text-danger"> {{$errors->first('company_address')}}</span>
                                             </label>
-                                            <input type="text" id="company_address"
-                                                   value="{{$employerData->company_address}}"
+                                            <input type="text" id="company_address" value="{{old('company_address')}}"
                                                    class="form-control"
                                                    name="company_address">
                                         </div>
                                         <div class="form-group mb-2">
-                                            <div class="form-group">
-                                                @include('backend.layouts.update-image',['tableName'=>$employerData->getTable(),'id'=>$employerData->id])
-                                            </div>
+                                            <label for="company_logo">Store Logo:
+                                                <span class="text-danger"> {{$errors->first('company_logo')}}</span>
+                                            </label>
+                                            <input type="file" id="company_logo" value="{{old('company_logo')}}"
+                                                   class="form-control"
+                                                   name="company_logo">
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="register_date"> Register date:
                                                 <span class="text-danger"> {{$errors->first('register_date')}}</span>
                                             </label>
-                                            <input type="date" id="register_date"
-                                                   value="{{$employerData->register_date}}"
+                                            <input type="date" id="register_date" value="{{old('register_date')}}"
                                                    class="form-control"
                                                    name="register_date">
                                         </div>
@@ -104,8 +95,7 @@ $columnName = "company_logo";
                                             <label for="company_website">Company Website:
                                                 <span class="text-danger"> {{$errors->first('company_website')}}</span>
                                             </label>
-                                            <input type="text" id="company_website"
-                                                   value="{{$employerData->company_website}}"
+                                            <input type="text" id="company_website" value="{{old('company_website')}}"
                                                    class="form-control"
                                                    name="company_website">
                                         </div>
@@ -114,7 +104,7 @@ $columnName = "company_logo";
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <button class="btn btn-primary w-100">Update Company</button>
+                                        <button class="btn btn-primary w-100">Add Store</button>
                                     </div>
                                 </div>
 

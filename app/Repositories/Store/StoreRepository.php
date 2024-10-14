@@ -1,21 +1,20 @@
 <?php
 
-namespace App\Repositories\Employer;
+namespace App\Repositories\Store;
 
-use App\Models\User\Employer;
-use App\Models\User\User;
+use App\Models\Store\Store;
 use App\Notifications\EmployerCreatedNotification;
 use App\Traits\General;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Str;
 
-class EmployerRepository implements EmployerInterface
+class StoreRepository implements StoreInterface
 {
     use General;
 
     private $model;
 
-    public function __construct(Employer $model)
+    public function __construct(Store $model)
     {
         $this->model = $model;
     }
@@ -23,7 +22,7 @@ class EmployerRepository implements EmployerInterface
     public function all()
     {
         $authUser = auth()->user();
-        if ($authUser->account_type->name == 'employer') {
+        if ($authUser->account_type->name == 'vendor') {
             return $this->model->where('user_id', $authUser->id)->get();
         } else {
             return $this->model->all();

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Employer;
+namespace App\Http\Requests\Store;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EmployerCreateRequest extends FormRequest
+class StoreCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +23,7 @@ class EmployerCreateRequest extends FormRequest
     {
         return [
             'company_name' => 'required|string|max:255',
-            'company_slug' => 'required|unique:employers,company_slug|string|max:255',
-
+            'company_slug' => 'required|unique:stores,company_slug|string|max:255',
         ];
     }
 }

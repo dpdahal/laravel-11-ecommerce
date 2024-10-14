@@ -18,8 +18,8 @@ use App\Repositories\Blogs\BlogsInterface;
 use App\Repositories\Blogs\BlogsRepository;
 use App\Repositories\Blogs\Category\BlogCategoryInterface;
 use App\Repositories\Blogs\Category\BlogCategoryRepository;
-use App\Repositories\Employer\EmployerInterface;
-use App\Repositories\Employer\EmployerRepository;
+use App\Repositories\Store\StoreInterface;
+use App\Repositories\Store\StoreRepository;
 use App\Repositories\MemberType\MemberTypeInterface;
 use App\Repositories\MemberType\MemberTypeRepository;
 use App\Repositories\Page\MenuInterface;
@@ -64,6 +64,7 @@ class CustomRepositoryRegisterProvider extends ServiceProvider
         $this->app->bind(SettingInterface::class, SettingRepository::class);
         $this->app->bind(ContinentInterface::class, ContinentRepository::class);
         $this->app->bind(CountryInterface::class, CountryRepository::class);
+        $this->app->bind(StoreInterface::class, StoreRepository::class);
     }
 
     /**

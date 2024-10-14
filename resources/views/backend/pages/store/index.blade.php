@@ -7,9 +7,9 @@
                     <div class="row">
                         <div class="col-md-12 mt-2">
                             <h2>
-                                <i class="bi bi-shop"></i> Company List
-                                <a href="{{route('manage-employer.create')}}" class="btn btn-primary btn-sm float-end">
-                                    <i class="bi bi-plus-circle"></i> Add Company</a>
+                                <i class="bi bi-shop"></i> Store List
+                                <a href="{{route('manage-store.create')}}" class="btn btn-primary btn-sm float-end">
+                                    <i class="bi bi-plus-circle"></i> Add Store</a>
 
 
                             </h2>
@@ -34,8 +34,8 @@
                                 </thead>
                                 <tbody>
 
-                                @if($employerData)
-                                    @foreach($employerData as $key=>$emp)
+                                @if($storeData)
+                                    @foreach($storeData as $key=>$emp)
                                         <tr>
                                             <td>{{++$key}}</td>
                                             <td>{{$emp->company_name}}</td>
@@ -48,14 +48,18 @@
 
                                                 @if(auth()->user()->account_type->name=='admin')
                                                     <hr>
-                                                    <form action="{{route('manage-employer-update-status')}}"
+                                                    <form action="{{route('manage-store-update-status')}}"
                                                           method="post">
                                                         @csrf
                                                         <input type="hidden" name="id" value="{{$emp->id}}">
                                                         <button name="pending" class="btn btn-sm btn-danger">Pending
                                                         </button>
-                                                        <button name="approved" class="btn btn-sm btn-success">Approved</button>
-                                                        <button name="rejected" class="btn btn-sm btn-warning">Rejected</button>
+                                                        <button name="approved" class="btn btn-sm btn-success">
+                                                            Approved
+                                                        </button>
+                                                        <button name="rejected" class="btn btn-sm btn-warning">
+                                                            Rejected
+                                                        </button>
 
                                                     </form>
                                                 @endif
@@ -69,15 +73,15 @@
                                                 @endif
                                             </th>
                                             <td style="width: 12%;">
-                                                <a href="{{route('manage-employer.show',$emp->id)}}" title="View Record"
+                                                <a href="{{route('manage-store.show',$emp->id)}}" title="View Record"
                                                    class="btn btn-primary btn-sm">
                                                     <i class="bi bi-eye-fill"></i>
                                                 </a>
-                                                <a href="{{route('manage-employer.edit',$emp->id)}}" title="Edit Record"
+                                                <a href="{{route('manage-store.edit',$emp->id)}}" title="Edit Record"
                                                    class="btn btn-warning btn-sm">
                                                     <i class="bi bi-pencil-square"></i>
                                                 </a>
-                                                <form action="{{route('manage-employer.destroy',$emp->id)}}"
+                                                <form action="{{route('manage-store.destroy',$emp->id)}}"
                                                       method="post"
                                                       style="display: inline-block">
                                                     @csrf

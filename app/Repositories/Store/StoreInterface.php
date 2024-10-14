@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories\Employer;
+namespace App\Repositories\Store;
 
-interface EmployerInterface
+interface StoreInterface
 {
 
     public function all();

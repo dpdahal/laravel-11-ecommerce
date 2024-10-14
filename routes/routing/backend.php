@@ -20,7 +20,7 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'company-backend', 'middlewa
     require_once dirname(__FILE__) . '/account/admin.php';
     require_once dirname(__FILE__) . '/profile/profile.php';
     require_once dirname(__FILE__) . '/member-type/member-type.php';
-    require_once dirname(__FILE__) . '/employer/employer.php';
+    require_once dirname(__FILE__) . '/store/store.php';
     require_once dirname(__FILE__) . '/team/team.php';
     require_once dirname(__FILE__) . '/activity/activity.php';
     require_once dirname(__FILE__) . '/blog/blog.php';

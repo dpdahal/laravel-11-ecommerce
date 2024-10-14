@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\User;
+namespace App\Models\Store;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Employer extends Model
+class Store extends Model
 {
     use HasFactory;
 
@@ -23,5 +23,4 @@ class Employer extends Model
         'status',
         'approved_at',
     ];
-
 }
